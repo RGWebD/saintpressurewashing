@@ -14,7 +14,7 @@ async def m():
         await pg.evaluate(f'scrollTo(0,{y})')
       await pg.wait_for_timeout(wt)
       ov=await pg.evaluate('document.documentElement.scrollWidth-innerWidth')
-      f=f'/workspace/saintpw/qa/shots/{TAG}_{pg_[:-5]}_{w}_{y}.png'; await pg.screenshot(path=f); print(f,'overflow',ov)
+      f=f'/workspace/saintpw/qa/shots/{TAG}_{pg_[:-5]}_{w}_{y}_{wt}.png'; await pg.screenshot(path=f); print(f,'overflow',ov)
       await ctx.close()
     await b.close()
 asyncio.run(m())

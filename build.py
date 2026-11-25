@@ -258,7 +258,7 @@ def page_work():
     out=head(p,title,desc,[biz_schema(),crumbs_schema(p,'Our Work')])+nav(p)
     out+=phero(p,title,'Our Work','The <span class="b">job</span> log.','Real lots, real paint — all photos are Saint’s own, from their Facebook page and website.','f06','Aerial of three metal warehouse buildings and their lots','Commercial park · aerial','THE WORK')
     logs=''.join(f'<div class="logc rv d{i%2}"><q>{E(t)}</q><span class="loc">{E(l)}</span></div>' for i,(t,l) in enumerate(JOBLOG))
-    out+=f'''<section class="sec"><div class="wrap sweep">
+    out+=f'''<section class="sec"><div class="wrap sweep rev">
 <div class="rv d1"><span class="eyebrow">Clean sweep #2</span><h2>Bare lot → <span class="y">laid out.</span></h2><p>The same property from the air — before, with a worn lot and no layout; after, washed with fresh stalls, an ADA space, hatched aisle and a crisp red curb.</p></div>
 <div class="rv">{sweep('sweep-annex','Before: a worn, unmarked lot around a white building','After: the same lot washed with new stalls, ADA spaces and red curb paint','Drag to restripe')}</div>
 </div></section>
@@ -314,7 +314,7 @@ def page_contact():
     out+=f'''<section class="sec"><div class="wrap">
 <div class="ways"><a class="way rv" href="{D['tel']}"><small>Call</small><b>{D['phone']}</b><span>Talk it through and book a free consultation.</span></a>
 <a class="way rv d1" href="{D['sms']}"><small>Text</small><b>Text a photo</b><span>Snap the lot, driveway or site and send it to {D['phone']}.</span></a>
-<a class="way rv d2" href="mailto:{D['email']}?subject=Free%20quote%20request"><small>Email</small><b>{D['email']}</b><span>Plans, site maps or a long list? Email works.</span></a></div>
+<a class="way rv d2" href="mailto:{D['email']}?subject=Free%20quote%20request"><small>Email</small><b class="sm">{D['email']}</b><span>Plans, site maps or a long list? Email works.</span></a></div>
 </div></section>
 <section class="sec tight alt"><div class="wrap two">
 <form class="qform rv" novalidate><h3>Quote builder</h3>

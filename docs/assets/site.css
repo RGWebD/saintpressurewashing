@@ -49,8 +49,10 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opac
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--ink)}
 .hero .bg{position:absolute;inset:0}
 .hero .bg picture{position:absolute;inset:0}.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;animation:kb 22s ease-out both}
-.hero .bg .grime{position:absolute;inset:0;-webkit-backdrop-filter:grayscale(.85) sepia(.55) brightness(.42) contrast(1.1);backdrop-filter:grayscale(.85) sepia(.55) brightness(.42) contrast(1.1);clip-path:inset(0 0 0 0);animation:washpass 2.2s cubic-bezier(.7,0,.25,1) .5s forwards}
-.hero .washline{position:absolute;top:-10%;bottom:-10%;width:140px;left:-140px;background:linear-gradient(90deg,transparent,rgba(191,234,255,.0) 30%,rgba(191,234,255,.55) 70%,rgba(255,255,255,.9) 82%,transparent);filter:blur(6px);mix-blend-mode:screen;animation:washbar 2.2s cubic-bezier(.7,0,.25,1) .5s forwards;pointer-events:none}
+.hero .bg .grime{position:absolute;inset:0;-webkit-backdrop-filter:grayscale(.85) sepia(.55) brightness(.42) contrast(1.1);backdrop-filter:grayscale(.85) sepia(.55) brightness(.42) contrast(1.1);clip-path:inset(0 0 0 0)}
+.ready .hero .bg .grime{animation:washpass 2.2s cubic-bezier(.7,0,.25,1) .15s forwards}
+.hero .washline{position:absolute;top:-10%;bottom:-10%;width:140px;left:-140px;background:linear-gradient(90deg,transparent,rgba(191,234,255,.0) 30%,rgba(191,234,255,.55) 70%,rgba(255,255,255,.9) 82%,transparent);filter:blur(6px);mix-blend-mode:screen;pointer-events:none}
+.ready .hero .washline{animation:washbar 2.2s cubic-bezier(.7,0,.25,1) .15s forwards}
 @keyframes washpass{to{clip-path:inset(0 0 0 100%)}}
 @keyframes washbar{0%{left:-140px;opacity:1}92%{opacity:1}100%{left:100%;opacity:0}}
 @keyframes kb{from{transform:scale(1.14)}to{transform:scale(1.02)}}
@@ -302,3 +304,14 @@ footer{padding-bottom:110px}.cta{border-radius:20px}.lbx{padding:60px 10px}.lbx 
 .rv{opacity:1;transform:none}.jet{clip-path:none}.hero .bg .grime{display:none}.hero .washline{display:none}.loader{display:none}.stall svg.lines line{stroke-dashoffset:0}.timeline .fill{transform:none}}
 .sweep h2,.night h2{font-size:clamp(30px,3.4vw,46px)}
 h1,h2,h3{overflow-wrap:break-word}
+.phero .grid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)}
+.phero h1{font-size:clamp(40px,5.2vw,76px)}
+.svc{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.svc h2,.two h2{font-size:clamp(32px,4vw,56px)}
+.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.sweep.rev{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}
+.way b.sm{font-size:clamp(16px,1.45vw,19px)}
+@media (max-width:860px){.phero .grid,.svc,.two,.sweep.rev{grid-template-columns:minmax(0,1fr)}}
+.cta{grid-template-columns:minmax(0,1.3fr) auto}
+@media (max-width:860px){.cta{grid-template-columns:minmax(0,1fr)}.collage figure{translate:none!important}}
+@media (max-width:600px){.cta h2{font-size:clamp(26px,7.6vw,34px)}.cta .ctas{flex-direction:column}}

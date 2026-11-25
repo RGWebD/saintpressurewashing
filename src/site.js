@@ -46,7 +46,7 @@ if(!RM&&matchMedia('(hover:hover)').matches)$$('.tilt').forEach(c=>{c.addEventLi
 // magnetic buttons
 if(!RM&&matchMedia('(hover:hover)').matches)$$('.mag').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.25}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
 // parallax
-const px=$$('[data-px]');if(px.length&&!RM){const u=()=>px.forEach(el=>{const r=el.getBoundingClientRect();const c=r.top+r.height/2-innerHeight/2;el.style.translate=`0 ${(-c*(+el.dataset.px)).toFixed(1)}px`});addEventListener('scroll',u,{passive:true});u();}
+const px=$$('[data-px]');if(px.length&&!RM&&innerWidth>860){const u=()=>px.forEach(el=>{const r=el.getBoundingClientRect();const c=r.top+r.height/2-innerHeight/2;el.style.translate=`0 ${(-c*(+el.dataset.px)).toFixed(1)}px`});addEventListener('scroll',u,{passive:true});u();}
 // open/closed badge (hours as listed, America/Chicago)
 const H=window.SPW_HOURS;
 if(H){const now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/Chicago'}));const d=now.getDay(),m=now.getHours()*60+now.getMinutes();

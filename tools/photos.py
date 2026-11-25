@@ -7,7 +7,8 @@ def save(im, name, w, q=80):
     im.save(O+name+'.webp','WEBP',quality=q,method=6); print(name, im.size)
 def blur(im, box, r=10):
     reg=im.crop(box).filter(ImageFilter.GaussianBlur(r)); im.paste(reg, box[:2]); return im
-h=Image.open(W+'w_GENB1789.JPEG'); save(h,'hero-lot',2200,74); save(h,'hero-lot-m',1100,76)
+h=Image.open(W+'w_GENB1789.JPEG').crop((0,0,1960,1440));  # crop off their corner watermark
+save(h,'hero-lot',2200,74); save(h,'hero-lot-m',1100,76)
 save(Image.open(W+'w_blob.png'),'ada-stripes',1600)
 save(Image.open(W+'w_RUBI8550.JPEG'),'residential-drive',1600)
 save(Image.open(W+'w_IMG_1206.JPG'),'warehouse-midwash',1100)

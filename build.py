@@ -157,7 +157,7 @@ def cta_band(h='Get a free quote & consultation',p='Call or text a photo of the 
 <div class="ctas"><a class="btn mag" href="{D['tel']}">{I_PHONE}Call {D['phone']}</a><a class="btn ghost" href="{D['sms']}">{I_SMS}Text a photo</a><a class="btn ghost" href="mailto:{D['email']}?subject=Free%20quote%20request">{I_MAIL}Email</a></div>
 </div></div></section>'''
 def quotes():
-    q=''.join(f'''<figure class="quote rv d{i}"><div class="st" aria-hidden="true">★★★★★</div><blockquote>{E(r['text'])}</blockquote><figcaption>{E(r['name'])}<span>{E(r['src'])}</span></figcaption></figure>''' for i,r in enumerate(REVIEWS))
+    q=''.join(f'''<figure class="quote rv d{i}"><div class="st">{E(r["src"])}</div><blockquote>{E(r['text'])}</blockquote><figcaption>— {E(r['name'])}</figcaption></figure>''' for i,r in enumerate(REVIEWS))
     return f'<div class="quotes">{q}</div>'
 def sweep(name,before_alt,after_alt,label='Drag to wash'):
     w,h=dims(name+'-before')
@@ -182,17 +182,17 @@ def page_home():
     out+=f'''
 <div class="loader" aria-hidden="true"><svg viewBox="0 0 420 150"><line class="y" x1="10" y1="10" x2="10" y2="110" pathLength="1" style="animation-delay:0s"/><line x1="110" y1="10" x2="110" y2="110" pathLength="1" style="animation-delay:.12s"/><line x1="210" y1="10" x2="210" y2="110" pathLength="1" style="animation-delay:.24s"/><line x1="310" y1="10" x2="310" y2="110" pathLength="1" style="animation-delay:.36s"/><line class="y" x1="410" y1="10" x2="410" y2="110" pathLength="1" style="animation-delay:.48s"/><line class="y" x1="10" y1="110" x2="410" y2="110" pathLength="1" style="animation-delay:.6s"/><text x="210" y="146" text-anchor="middle">SAINT</text></svg></div>
 <section class="hero" aria-label="Intro">
-<div class="bg" aria-hidden="true"><div class="grime"><picture><source media="(max-width:600px)" srcset="img/hero-lot-m.webp"><img src="img/hero-lot.webp" width="2200" height="1238" alt="" fetchpriority="high"></picture></div>
-<div class="clean"><picture><source media="(max-width:600px)" srcset="img/hero-lot-m.webp"><img src="img/hero-lot.webp" width="2200" height="1238" alt=""></picture></div><div class="washline"></div></div>
+<div class="bg" aria-hidden="true"><picture><source media="(max-width:600px)" srcset="img/hero-lot-m.webp"><img src="img/hero-lot.webp" width="1960" height="1440" alt="" fetchpriority="high"></picture>
+<div class="grime"></div><div class="washline"></div></div>
 <div class="shade"></div><div class="bigtype" aria-hidden="true">CLEAN</div>
 <div class="wrap in">
 <span class="eyebrow">Commercial pressure washing · Greater Houston</span>
-<h1 aria-label="You make the mess. We'll do the rest."><span class="jet" aria-hidden="true">You make</span><span class="jet" aria-hidden="true">the mess.</span><span class="jet y" aria-hidden="true">We’ll do the rest.</span></h1>
+<h1 aria-label="You make the mess. We'll do the rest."><span class="jet" aria-hidden="true">You make</span><span class="jet" aria-hidden="true">the mess.</span><span class="jet y" aria-hidden="true">We’ll do</span><span class="jet y" aria-hidden="true">the rest.</span></h1>
 <p class="lede">Pressure washing, parking-lot striping and construction cleanup for commercial properties across Greater Houston — plus residential surface cleaning and soft washing. Call today for a free quote &amp; consultation.</p>
 <div class="ctas"><a class="btn mag" href="{D['tel']}">{I_PHONE}Call {D['phone']}</a><a class="btn ghost" href="{D['sms']}">{I_SMS}Text a photo of the job</a></div>
 <div class="chips"><span class="chip">Free quote &amp; consultation</span><span class="chip">Based in Cypress · serving Greater Houston</span>{chip_live()}</div>
 </div><div class="scrollcue" aria-hidden="true"></div></section>
-<div class="tape" aria-hidden="true"><div class="track"><div class="run">{tape}</div><div class="run">{tape}</div></div></div>
+<div class="tapewrap"><div class="tape" aria-hidden="true"><div class="track"><div class="run">{tape}</div><div class="run">{tape}</div></div></div></div>
 
 <section class="sec"><div class="wrap sweep">
 <div class="rv">{sweep('sweep-lot','Before: faded stalls and grimy concrete on a fenced lot','After: the same lot washed, with crisp new white stalls, ADA spaces and a hatched aisle')}</div>
@@ -211,7 +211,7 @@ def page_home():
 </div></div></section>
 
 <section class="sec alt"><div class="wrap night">
-<div class="rv"><span class="eyebrow">Under the lights</span><h2>Plenty of lots get done <span class="y">after dark.</span></h2><p>Saint’s rig and crew show up for commercial lots of every size — and a lot of their work is shot under the parking-lot lights. Retail lots, county facilities, game-day parking and brand-new construction.</p>
+<div class="rv"><span class="eyebrow">Under the lights</span><h2>Plenty of lots get done <span class="y">after dark.</span></h2><p>A lot of Saint’s work happens under the parking-lot lights — retail lots, county facilities, game-day parking and brand-new construction, with the rig parked right on site.</p>
 <a class="btn water" href="work.html">See the work</a></div>
 <div class="collage">
 <figure class="c2 rv" data-px=".05">{img('f05','Fenced lot at night with fresh yellow angled stalls')}<figcaption>Fresh angled stalls</figcaption></figure>

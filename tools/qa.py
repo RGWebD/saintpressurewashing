@@ -3,7 +3,7 @@ from playwright.async_api import async_playwright
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:47290/'
 TAG = sys.argv[2] if len(sys.argv) > 2 else 'r1'
 OUT = '/workspace/saintpw/qa/shots'
-PAGES = ['index.html','services.html','work.html','about.html','contact.html','404.html']
+PAGES = ['index.html','services.html','work.html','about.html','contact.html','404.html','nope.html']
 async def run():
     async with async_playwright() as p:
         b = await p.chromium.launch(executable_path='/usr/bin/google-chrome', args=['--no-sandbox'])
